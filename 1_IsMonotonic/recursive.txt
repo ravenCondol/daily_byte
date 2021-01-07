@@ -1,0 +1,29 @@
+def monotonically(arr):
+    return mono_helper(arr, None)
+
+def mono_helper(arr, isDecreasing):
+    if len(arr) <= 1:
+        return True
+    firstVal = arr[0]
+    secondVal = arr[1]
+    if firstVal == secondVal:
+        pass
+    elif isDecreasing is None:
+        if firstVal > secondVal:
+            isDecreasing = True
+        else:
+            isDecreasing = False
+    elif firstVal < secondVal and isDecreasing:
+        return False
+    elif firstVal > secondVal and not isDecreasing:
+        return False
+    return mono_helper(arr[1:], isDecreasing)
+
+print(monotonically([1, 2, 3, 4, 5]))
+print(monotonically([5]))
+print(monotonically([]))
+print(monotonically([5, 4, 3]))
+print(monotonically([1, 2, 5, 0]))
+
+# space complexity: O(n^2)
+# time complexity: O(n)
