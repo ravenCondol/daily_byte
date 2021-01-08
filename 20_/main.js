@@ -76,8 +76,8 @@ example1 = [
 ]
 
 example2 = [
-    [O, O, S],
-    [S, O, O],
+    [O, O, O],
+    [S, O, S],
     [O, O, S]
 ]
 
